@@ -56,6 +56,23 @@ const renderData = (entry) => {
     }
     domObj.lastEntry.innerHTML = domString;
 };
+//take the entry and post it to the server to save it in the database
+const postEntry = async (url = "", entry = {}) => {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            mode: "cors",
+            credentials: "same-origin",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(entry)
+        });
+        return response.json;
+    } catch (err) {
+        console.log(err);
+    }
+};
 /////////////////////////////////////////////////////////////////////////////////
 /*Set-up The Event Listener*/
 domObj.submitBtn.addEventListener("click", async e => {
@@ -66,6 +83,8 @@ domObj.submitBtn.addEventListener("click", async e => {
         const entry = await getEntry();
         //render the data on the DOM
         renderData(entry);
+        //post the entry to the server side
+        postEntry("", entry).then(data => console.log(data));
     } catch (err) {
         renderData();
     }
