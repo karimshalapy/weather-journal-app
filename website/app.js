@@ -4,6 +4,7 @@ const domObj = {
     zipInput: document.getElementById("zip"),
     feelingsInput: document.getElementById("feelings"),
     lastEntry: document.getElementById("last-entry"),
+    allEntriesBtn: document.getElementById("get-all-entries")
 }
 // Create a new date instance dynamically with JS
 let d = new Date();
@@ -88,4 +89,7 @@ domObj.submitBtn.addEventListener("click", async e => {
     } catch (err) {
         renderData();
     }
+});
+domObj.allEntriesBtn.addEventListener("click", async e => {
+    window.open("/entries", "_blank")
 })
