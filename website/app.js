@@ -68,7 +68,7 @@ const postEntry = async (url = "", entry = {}) => {
             },
             body: JSON.stringify(entry)
         });
-        return response.json;
+        return response.json();
     } catch (err) {
         console.log(err);
     }
@@ -84,7 +84,7 @@ domObj.submitBtn.addEventListener("click", async e => {
         //render the data on the DOM
         renderData(entry);
         //post the entry to the server side
-        postEntry("", entry).then(data => console.log(data));
+        postEntry("/entries", entry).then(data => console.log(data));
     } catch (err) {
         renderData();
     }
