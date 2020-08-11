@@ -1,7 +1,11 @@
 /*Global*/
 body{
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #f6f7f9cc;
+    background: url(./imgs/bgimg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-size: 16px;
 }
 body * {
@@ -23,7 +27,7 @@ h1 {
 h1 {
     grid-area: 1/1/2/3;
     margin: auto;
-    color: #2F365E;
+    color: #102030;
 }
 /*section styling*/
 section {
@@ -31,7 +35,7 @@ section {
     width: 60%;
     height: 95%;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px;
-    background: linear-gradient(#585E7E, #2F365E);
+    background: linear-gradient(#364b53, #102030);
     border-radius: 5px;
     transition: all 0.5s ease 0s;
     color: #f4f4f4;
@@ -82,7 +86,7 @@ button {
     border-radius: 100px;
     border: none;
     color: #f4f4f4;
-    background-color: #0F4FE6;
+    background-color: #404c53;
     width: 100%;
     height: 35px;
     margin: auto;
@@ -92,7 +96,7 @@ button:active {
     outline: none;
 }
 button:hover {
-    background-color: #1658f3;
+    background-color: #5C6971;
 }
 #get-all-entries {
     grid-area: 3/1/4/3;
